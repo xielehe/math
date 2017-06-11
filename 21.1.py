@@ -1,14 +1,32 @@
 #! /usr/bin/python
 # -*- coding: utf-8 -*-
 import func
+def base(m, a):
+    for x in xrange(1,m):
+        if func.aModM(x, 2, m) == a:
+            return (str(x) + '----> yes')
+    return 'none'
 
-#数论概论第19张习题--->19.4答案
-# if __name__ == "__main__":
-#     for x in xrange(1,54):
-#         if func.is_prime(x*6+1) and func.is_prime(x*12+1) and func.is_prime(x*18+1):
-#             print x , '-->' ,(x*6+1)*(x*12+1)*(x*18+1)
+def a(): print base(5987, 5987-1)
+def b(): print base(6781, 6781-1)
+def c(): print base(337, 84)
+def d(): print base(3011, 81)
 
 if __name__ == "__main__":
-    for k in xrange(1000,10000):
-        if func.is_prime(28*1*k+1) and func.is_prime(28*2*k+1) and func.is_prime(28*4*k+1) and func.is_prime(28*14*k+1) and func.is_prime(28*7*k+1):
-            print k, '---->',  (28*1*k+1)*(28*2*k+1)*(28*4*k+1)*(28*14*k+1)*(28*7*k+1)
+    # a()
+    # b()
+    # d()
+    # print 41*41-41*64+943
+    # c()
+    print (67*67+14*67-35)/337
+
+
+
+
+
+
+
+
+
+
+
