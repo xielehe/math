@@ -29,6 +29,43 @@ a^(p-1)/2≡(a/p)(mod p)[注意:此处的(a/p)是勒让德符号，不是除法]
 3（p-1)/2 + 1≡（p-1)/2 -1 +1（mod p）≡（p-1)/2 （mod p）
 所以第3块的第一个不是负数，而是（p-1)/2 。
 
+
+         [(p-1)/2... 2(p-1)/2...3(p-1)/2...4(p-1)/2... 5(p-1)/2]
+mod(p) = [  P    ...    -1   ...  P-1   ...  -2    ...   P-2   ]
+mod(5) = [  0    ...    0    ...  0     ...  0     ...   0     ](5*x+1)
+mod(5) = [  -2   ...    1    ...  -1    ...  2     ...   0     ](5*x+2)
+mod(5) = [  -4   ...    2    ...  -2    ...  4     ...   0     ](5*x+3)
+mod(5) = [  -1   ...    3    ...  -3    ...  1     ...   0     ](5*x+4)
+
+var P =100
+var pp = [P, -1, P-1, -2, P-2]
+var x1 = [0, 0, 0, 0, 0]
+var x2 = [-2, 1, -1, 2, 0]
+var x3 = [-4, 2, -2, 4, 0]
+var x4 = [-1, 3, -3, 1, 0]
+
+var vari = [x1, x2, x3, x4]
+
+for (var i = 0; i < vari.length; i++) {
+    var bb3
+    var bt3
+    if(pp[2] - vari[i][2] <= P) {bb3 = 3*P- vari[i][2] +5; }
+    else{bb3 = 3*P- vari[i][2]}
+    if(pp[0] - vari[i][0] <= P) {bb1 = P - vari[i][0] +5; }
+    else{bb1 = P - vari[i][0]}
+    if(-(pp[3] - vari[i][3]) > 5) {bt3 = 4*P-vari[i][3] +5}
+    else{bt3 = 4*P-vari[i][3]}
+    var block1 = [bb1, 2*P-vari[i][1]]
+    var block3 = [bb3, bt3]
+    if (block3[1]-block3[0] === block1[1]-block1[0]) console.log(vari[i])
+}
+
+
+
+
+
+
+
 var st4 = [-1, -2, -3, 1, 0]
 var 1t = [P+1, 2*P-3]
 var 3t = [3*P+3, 4*P-1]
