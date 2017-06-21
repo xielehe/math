@@ -35,6 +35,18 @@ def aModM(a, b, m):
         if b == '1': vaList.append(listMod[i])
     return reduce(lambda x, y: (x*y)%m, vaList, 1)
 
+#计算er ci sheng yu 
+def quadraticResidues(num):
+    if  not is_prime(num):
+        print('not prime')
+        return
+    P = (num - 1) / 2
+    residues = map(lambda x: (x*x)%num, range(1,P+1))
+    nonresidues = list(set(range(1,num)).difference(set(residues)))
+    return residues, nonresidues
+
+
+
 #数论概论第19张习题--->19.6答案
 if __name__ == "__main__":
     # print aModM(2, 294408, 294409)
