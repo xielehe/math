@@ -9,6 +9,14 @@ def b():
         res = func.quadraticResidues(x)
         print 'A:', sum(res[0]), 'B:', sum(res[1]), 'p-->', x, 'A+B-->', sum(res[0]) + sum(res[1])
 
+def d():
+    for x in filter(lambda x: x%2==1, filter(func.is_prime, xrange(1, 1000))):
+        res = func.quadraticResidues(x)
+        A = sum(res[0])
+        B = sum(res[1])
+        if A == B:
+            print 'A:', A, 'p-->', x, 'p mod 4', x%4
+
 if __name__ == '__main__':
     # ([1], [2]) --> 3
     # ([1, 4], [2, 3]) --> 5
@@ -27,10 +35,15 @@ if __name__ == '__main__':
     # A: 68 B: 68 p--> 17 A+B--> 136
     # A: 76 B: 95 p--> 19 A+B--> 171
     # p(p-1)/2 = A + B
-    b()
-#     c：A = 1^2+2^2+3^2+...+((p-1)/2)^2=(p-1)/2*((p-1)/2 +1)*p/6
-#     考虑(p-1)/2 mod 3
-#     if (p-1)/2 mod 3 ==1: (p-1) mod 3 =2 : p mod 3=0:p=3
-#     if (p-1)/2 mod 3 ==2: ((p-1)/2 +1) mod 3 =0 :(p-1)/2*((p-1)/2 +1)*p/6 mod p=0
-#     if (p-1)/2 mod 3 ==0: (p-1)/2*((p-1)/2 +1)*p/6 mod p=0
-#     所以，对于p！=3的基素数，A mod p=0，因为A+B mod p=0，所以B mod p=0
+    # b()
+
+    #c: A = 1^2+2^2+3^2+...+((p-1)/2)^2=(p-1)/2*((p-1)/2 +1)*p/6
+    #consider (p-1)/2 mod 3
+    #if (p-1)/2 mod 3 ==1: (p-1) mod 3 =2 : p mod 3=0:p=3
+    #if (p-1)/2 mod 3 ==2: ((p-1)/2 +1) mod 3 =0 :(p-1)/2*((p-1)/2 +1)*p/6 mod p=0
+    #if (p-1)/2 mod 3 ==0: (p-1)/2*((p-1)/2 +1)*p/6 mod p=0
+    #so as p!=3 odd prime, A mod p=0,
+    # because A+B mod p=0, so B mod p=0
+
+    # p mod 4=1
+    # d()
