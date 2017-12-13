@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>homework22.6</title>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<style>
+    body{
+        background-color: #f4f4f4;
+        color: #555555;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 1.6em;
+        width: 50%;
+        margin: auto;
+        word-spacing: .8em;
+    }
+</style>
+</head>
+
+<body>
+    <h1>证明</h1>
+    现在给定一个正奇数$\ b\ $,我们要计算\( \left( \dfrac {2}{b}\right) \).当$\ b\ $分解成素数的乘积时,
+    一些因数模$\ 8\ $余$1$或$7$,而另一些因数模$\ 8\ $余$3$或$5$，比如说
+     $$b=p_{1}p_{2}...p_{r}q_{1}q_{2}...q_{s}, \quad p_{i}\equiv 1或7(mod \ 8),  \quad q_{j}\equiv 3或5(mod \ 8)  $$
+     观察到
+     $$ b\equiv\begin{cases}1或7\ (mod \ 8) \quad 当 s为偶数时, \\ 3或5\ (mod \ 8) \quad 当 s为奇数时. \end{cases}  $$
+     由雅可比符号的定义可知
+     $$ \left( \dfrac {2}{b}\right) = \left( \dfrac {2}{p_{1}}\right) \left( \dfrac {2}{p_{2}}\right) ... \left( \dfrac {2}{p_{r}}\right)
+     \left( \dfrac {2}{q_{1}}\right) \left( \dfrac {2}{q_{2}}\right) ... \left( \dfrac {2}{q_{s}}\right). $$
+    二次互反律的原始版本告诉我们，$ \left( \dfrac {2}{p_{i}}\right) = 1, \left( \dfrac {2}{q_{j}}\right) = -1,$ 故
+    $$  \left( \dfrac {2}{b}\right) = (-1)^{s} = \begin{cases}1 \quad \ \ \ 当 s为偶数时, \\ -1 \quad 当 s为奇数时. \end{cases}  $$
+    将此与前面关于$b(mod \ 8)$的描述做比较，我们就证明了
+    $$ b \equiv 1或7(mod \ 8) \Leftrightarrow s为偶数 \Leftrightarrow \left( \dfrac {2}{b}\right) = 1, $$
+    $$ b \equiv 3或5(mod \ 8) \Leftrightarrow s为奇数 \Leftrightarrow \left( \dfrac {2}{b}\right) = -1. $$
+</body>
+</html>
