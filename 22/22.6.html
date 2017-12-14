@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,35 +9,99 @@
         MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
     </script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<style>
-    body{
-        background-color: #f4f4f4;
-        color: #555555;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 16px;
-        font-weight: bold;
-        line-height: 1.6em;
-        width: 50%;
-        margin: auto;
-        word-spacing: .8em;
-    }
-</style>
+    <style>
+        body{
+            background-color: #f4f4f4;
+            color: #555555;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 1.6em;
+            width: 50%;
+            margin: auto;
+            word-spacing: .8em;
+        }
+    </style>
 </head>
-
 <body>
-    <h1>证明</h1>
-    现在给定一个正奇数$\ b\ $,我们要计算\( \left( \dfrac {2}{b}\right) \).当$\ b\ $分解成素数的乘积时,
-    一些因数模$\ 8\ $余$1$或$7$,而另一些因数模$\ 8\ $余$3$或$5$，比如说
-     $$b=p_{1}p_{2}...p_{r}q_{1}q_{2}...q_{s}, \quad p_{i}\equiv 1或7(mod \ 8),  \quad q_{j}\equiv 3或5(mod \ 8)  $$
-     观察到
-     $$ b\equiv\begin{cases}1或7\ (mod \ 8) \quad 当 s为偶数时, \\ 3或5\ (mod \ 8) \quad 当 s为奇数时. \end{cases}  $$
-     由雅可比符号的定义可知
-     $$ \left( \dfrac {2}{b}\right) = \left( \dfrac {2}{p_{1}}\right) \left( \dfrac {2}{p_{2}}\right) ... \left( \dfrac {2}{p_{r}}\right)
-     \left( \dfrac {2}{q_{1}}\right) \left( \dfrac {2}{q_{2}}\right) ... \left( \dfrac {2}{q_{s}}\right). $$
-    二次互反律的原始版本告诉我们，$ \left( \dfrac {2}{p_{i}}\right) = 1, \left( \dfrac {2}{q_{j}}\right) = -1,$ 故
-    $$  \left( \dfrac {2}{b}\right) = (-1)^{s} = \begin{cases}1 \quad \ \ \ 当 s为偶数时, \\ -1 \quad 当 s为奇数时. \end{cases}  $$
-    将此与前面关于$b(mod \ 8)$的描述做比较，我们就证明了
-    $$ b \equiv 1或7(mod \ 8) \Leftrightarrow s为偶数 \Leftrightarrow \left( \dfrac {2}{b}\right) = 1, $$
-    $$ b \equiv 3或5(mod \ 8) \Leftrightarrow s为奇数 \Leftrightarrow \left( \dfrac {2}{b}\right) = -1. $$
+    <h1>证明(a)</h1>
+    <div>
+         现在给定一个正奇数$\ b\ $,我们要计算\( \left( \dfrac {2}{b}\right) \).当$\ b\ $分解成素数的乘积时,
+         一些因数模$\ 8\ $余$1$或$7$,而另一些因数模$\ 8\ $余$3$或$5$，比如说
+         $$b=p_{1}p_{2}...p_{r}q_{1}q_{2}...q_{s}, \quad p_{i}\equiv 1或7(mod \ 8),  \quad q_{j}\equiv 3或5(mod \ 8)  $$
+         观察到
+         $$ b\equiv\begin{cases}1或7\ (mod \ 8) \quad 当 s为偶数时, \\ 3或5\ (mod \ 8) \quad 当 s为奇数时. \end{cases}  $$
+         由雅可比符号的定义可知
+         $$ \left( \dfrac {2}{b}\right) = \left( \dfrac {2}{p_{1}}\right) \left( \dfrac {2}{p_{2}}\right) ... \left( \dfrac {2}{p_{r}}\right)
+         \left( \dfrac {2}{q_{1}}\right) \left( \dfrac {2}{q_{2}}\right) ... \left( \dfrac {2}{q_{s}}\right). $$
+        二次互反律的原始版本告诉我们，$ \left( \dfrac {2}{p_{i}}\right) = 1, \left( \dfrac {2}{q_{j}}\right) = -1,$ 故
+        $$  \left( \dfrac {2}{b}\right) = (-1)^{s} = \begin{cases}1 \quad \ \ \ 当 s为偶数时, \\ -1 \quad 当 s为奇数时. \end{cases}  $$
+        将此与前面关于$b(mod \ 8)$的描述做比较，我们就证明了
+        $$ b \equiv 1或7(mod \ 8) \Leftrightarrow s为偶数 \Leftrightarrow \left( \dfrac {2}{b}\right) = 1, $$
+        $$ b \equiv 3或5(mod \ 8) \Leftrightarrow s为奇数 \Leftrightarrow \left( \dfrac {2}{b}\right) = -1. $$
+    </div>
+    <h1>证明(b)</h1>
+    现在给定正奇数$\  a, b\ $,我们要计算\( \left( \dfrac {a}{b}\right) \).当$\ a\ $和$\ b\ $分解成素数的乘积时,
+    一些因数模$\ 4\ $余$\ 1\ $,而另一些因数模$\ 4\ $余$\ 3 \ $，比如说
+    $$b=p_{1}p_{2}...p_{r}q_{1}q_{2}...q_{s}, \quad p_{i}\equiv 1(mod \ 4),  \quad q_{j}\equiv 3(mod \ 4)  $$
+    $$a=p'_{1}p'_{2}...p'_{r'}q_{1}q'_{2}...q'_{s'}, \quad p'_{i}\equiv 1(mod \ 4),  \quad q'_{j}\equiv 3(mod \ 4)  $$
+    观察到
+    $$
+        b\equiv\begin{cases}1\ (mod \ 4) \quad 当 s为偶数时, \\ 3\ (mod \ 4) \quad 当 s为奇数时. \end{cases}
+        \quad \quad \quad
+        a\equiv\begin{cases}1\ (mod \ 4) \quad 当 s'为偶数时, \\ 3\ (mod \ 4) \quad 当 s'为奇数时. \end{cases}
+    $$
+    即当$\ s\ $和$\ s'\ $都为奇数时，$\ a\ $和$\ b\ $都模$\ 4\ $余$\ 3\ $ $\quad \left( 1\right) $ <br/>
+    由雅可比符号的定义可知
+    $$ \left( \dfrac {a}{b}\right) = \left( \dfrac {p'_{1}}{b}\right) \left( \dfrac {p'_{2}}{b}\right) ... \left( \dfrac {p'_{r'}}{b}\right)
+    \left( \dfrac {q'_{1}}{b}\right) \left( \dfrac {q'_{2}}{b}\right) ... \left( \dfrac {q'_{s'}}{b}\right)$$
+    $$
+    = \left( \dfrac {p'_{1}}{p_{1}}\right) \left( \dfrac {p'_{1}}{p_{2}}\right)...\left( \dfrac {p'_{1}}{p_{r}}\right)
+    \left( \dfrac {p'_{1}}{q_{1}}\right) \left( \dfrac {p'_{1}}{q_{2}}\right)...\left( \dfrac {p'_{1}}{q_{s}}\right)
+    $$
+    $$
+    \left( \dfrac {p'_{2}}{p_{1}}\right) \left( \dfrac {p'_{2}}{p_{2}}\right)...\left( \dfrac {p'_{2}}{p_{r}}\right)
+    \left( \dfrac {p'_{2}}{q_{1}}\right) \left( \dfrac {p'_{2}}{q_{2}}\right)...\left( \dfrac {p'_{2}}{q_{s}}\right)...
+    $$
+    $$
+    \left( \dfrac {p'_{r'}}{p_{1}}\right) \left( \dfrac {p'_{r'}}{p_{2}}\right)...\left( \dfrac {p'_{r'}}{p_{r}}\right)
+    \left( \dfrac {p'_{r'}}{q_{1}}\right) \left( \dfrac {p'_{r'}}{q_{2}}\right)...\left( \dfrac {p'_{r'}}{q_{s}}\right)...
+    $$
+    $$
+    \left( \dfrac {q'_{s'}}{p_{1}}\right) \left( \dfrac {q'_{s'}}{p_{2}}\right)...\left( \dfrac {q'_{s'}}{p_{r}}\right)
+    \left( \dfrac {q'_{s'}}{q_{1}}\right) \left( \dfrac {q'_{s'}}{q_{2}}\right)...\left( \dfrac {q'_{s'}}{q_{s}}\right)
+    $$
+    $$
+    = \prod\limits_i  \prod\limits_j \left( \dfrac {p'_{i}}{p_{j}}\right) \left( \dfrac {p'_{i}}{q_{j'}}\right)
+    \left( \dfrac {q'_{i'}}{p_{j}}\right) \left( \dfrac {q'_{i'}}{q_{j'}}\right)
+    i\in r',\  i'\in s', \  j \in r, \  j' \in s.
+    $$
+    $$
+    = \prod\limits_i  \prod\limits_j \left( \dfrac {p_{j}}{p'_{i}}\right) \left( \dfrac {q_{j'}}{p'_{i}}\right)
+    \left( \dfrac {q'_{i'}}{p_{j}}\right) \left( \dfrac {q'_{i'}}{q_{j'}}\right)
+    二次互反律, p'_{i}\equiv 1(mod \ 4)
+    $$
+    $$
+    = \prod\limits_i  \prod\limits_j \left( \dfrac {p_{j}}{p'_{i}}\right) \left( \dfrac {q_{j'}}{p'_{i}}\right)
+    \left( \dfrac {p_{j}}{q'_{i'}}\right) \left( \dfrac {q'_{i'}}{q_{j'}}\right)
+    二次互反律, p_{j}\equiv 1(mod \ 4), j \in r.
+    $$
+    $$
+    = \prod\limits_i  \prod\limits_j \left( \dfrac {p_{j}}{p'_{i}}\right) \left( \dfrac {q_{j'}}{p'_{i}}\right)
+    \left( \dfrac {p_{j}}{q'_{i'}}\right) \left( \dfrac {q_{j'}}{q'_{i'}}\right) (-1)^{s \times s' }
+    二次互反律
+    $$
+    $$
+    = \left( \dfrac {b}{a}\right) (-1)^{s \times s' }
+    二次互反律
+    $$
+    由$\ s\ $和$\ s'\ $的奇偶性可知，当$\ s\ $和$\ s'\ $都为奇数时，$(-1)^{s \times s' } = -1$,否则,$(-1)^{s \times s' } = 1$故
+
+    $$
+    \left( \dfrac {a}{b}\right) = \begin{cases} \left( \dfrac {b}{a}\right) \quad 当 s和s'不都为奇数时，再由 \left( 1\right)得，\ a\ 和\ b\ 至少一个模\ 4\ 余\ 1时, \\
+
+    -\left( \dfrac {b}{a}\right) \quad 当 s和s'都为奇数时，再由 \left( 1\right)得，\ a\ 和\ b\ 都模\ 4\ 余\ 3时 . \end{cases}
+    $$
+    <br> <br> <br> <br> <br> <br> <br>
 </body>
 </html>
