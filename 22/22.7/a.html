@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>homework22.6</title>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            color: #555555;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 2.5em;
+            width: 50%;
+            margin: auto;
+            word-spacing: .8em;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>证明(a)</h1>
+    <div>
+        由$ \ x = a^{(p+1)/4} \  \quad \Rightarrow $
+        $$\ x^{2}\ \ (mod\ p) \ $$
+        $$\  = a^{(p+1)/2} \  (mod\ p) \ $$
+        $$\  = a^{(p-1)/2} \times a \  (mod\ p) \ $$
+        根据定理21.1(欧拉准则) $ a^{(p-1)/2} \equiv \left( \dfrac {a}{p}\right)  \  (mod\ p) $ 可得
+        $$\  =\left( \dfrac {a}{p}\right) \times a \  (mod\ p) \ $$
+        因为$\ a\ $是模$\ p\ $的一个二次剩余,所以 $ \left( \dfrac {a}{p}\right) = 1 $
+        $$\  =1 \times a \  (mod\ p) \ $$
+        $$\  = a \  (mod\ p) \ $$
+        命题得证
+    </div>
+</body>
+
+</html>
