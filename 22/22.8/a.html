@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>homework22.8</title>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            color: #555555;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 2.5em;
+            width: 50%;
+            margin: auto;
+            word-spacing: .8em;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>证明(a)</h1>
+    <div>
+        由
+        $$ x = a^{(p+3)/8} \ 或\ x = 2a \cdot \left( 4a\right)^{(p-5)/8} $$
+        得
+        $$ x^{2} = a^{(p+3)/4} \tag{a}$$
+        或
+        $$ x^{2} = 4a^{2} \cdot \left( 4a\right)^{(p-5)/4} \tag{b} $$
+        根据定理21.1(欧拉准则) $ a^{(p-1)/2} \equiv \left( \dfrac {a}{p}\right)  \  (mod\ p) $ 可得
+        $$
+        \begin {split}
+        \left( a^{(p-1)/4}\right)^{2}  \  (mod\ p) &= a^{(p-1)/2}   \  (mod\ p) \\
+              &= \left( \dfrac {a}{p}\right)  \  (mod\ p) \\
+              &=  1  (mod\ p)
+        \end {split}
+        $$
+        根据上面能够推出
+        $$ a^{(p-1)/4}\equiv 1 (\ mod\ p) \tag{case1}\label{case1} $$
+        或
+        $$a^{(p-1)/4}\equiv -1 (\ mod\ p) \tag{case2}\label{case2}$$
+
+        当 $  a^{(p-1)/4}\equiv 1 (\ mod\ p) $时, 推导$\ x^{2} = a^{(p+3)/4} $
+        $$
+        \begin {split}
+        x^{2} &= a^{(p+3)/4} \\
+              &= a^{(p+4-1)/4} \\
+              &= a^{(p-1)/4 + 1} \\
+              &= a\cdot a^{(p-1)/4} \\
+              &= a\cdot 1 (\ mod\ p)
+        \end {split}
+        $$
+        当 $  a^{(p-1)/4}\equiv -1 (\ mod\ p) $时, 推导$\ x^{2} = 4a^{2} \cdot \left( 4a\right)^{(p-5)/4} $
+        $$
+        \begin {split}
+        x^{2} &=  4a^{2} \cdot \left( 4a\right)^{(p-5)/4} \\
+              &=  4a^{2} \cdot \left( 4a\right)^{(p-1-4)/4} \\
+              &=  4a^{2} \cdot \left( 4a\right)^{(p-1)/4 - 1} \\
+              &=  4a^{2} \cdot \left( 4a\right)^{(p-1)/4} \div 4a \\
+              &=  a \cdot \left( 4a\right)^{(p-1)/4} \\
+              &=  a \cdot \left( a\right)^{(p-1)/4} \cdot \left( 4\right)^{(p-1)/4} \\
+              &=  a \cdot (-1) \cdot \left( 4\right)^{(p-1)/4} \\
+              &=  a \cdot (-1) \cdot \left( 2\right)^{(p-1)/2} \\
+              &=  a \cdot (-1) \cdot (-1)\\
+              &= a (\ mod\ p)
+        \end {split}
+        $$
+        所以
+        $$
+        x=\begin{cases} a^{(p+3)/8} \quad\quad\quad\quad\quad\quad 当   a^{(p-1)/4}\equiv 1 (\ mod\ p) 时 \\
+             2a \cdot \left( 4a\right)^{(p-5)/8} \quad\quad\quad 当   a^{(p-1)/4}\equiv -1 (\ mod\ p) 时 \end{cases}
+        $$
+        命题得证
+    </div>
+</body>
+
+</html>
