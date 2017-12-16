@@ -12,3 +12,11 @@ func Odd(number uint64) bool {
 	// ... That fails for negative numbers.
 	return !Even(number)
 }
+
+//Floor 地板函数
+func Floor(x float32) int {
+	if x < 0 {
+		return int(x) - 1
+	}
+	return int(x)
+}
