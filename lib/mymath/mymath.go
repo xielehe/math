@@ -14,7 +14,7 @@ func Odd(number uint64) bool {
 }
 
 //Floor 地板函数
-func Floor(x float32) int {
+func Floor(x float64) int {
 	if x < 0 {
 		return int(x) - 1
 	}
