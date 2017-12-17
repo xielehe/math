@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>homework22.8</title>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            color: #555555;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 2.5em;
+            width: 50%;
+            margin: auto;
+            word-spacing: .8em;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        $$
+        \begin {split}
+        f\left(x\right) &= \lfloor 2 \cdot x \rfloor - 2 \cdot  \lfloor x \rfloor
+        \end {split}
+        $$
+    </div>
+    <h1>(a)</h1>
+    <div>
+        结论: $ f\left( x\right) = f\left( x + n\right) $
+        推导:
+        $$
+        \begin {split}
+        f\left(x+n\right) &= \lfloor 2 \cdot (x + n) \rfloor - 2 \cdot  \lfloor (x + n) \rfloor \\
+              &= \lfloor 2 \cdot x + 2 \cdot n \rfloor - 2 \cdot ( \lfloor x \rfloor + \lfloor n \rfloor ) \\
+              &= \lfloor 2 \cdot x \rfloor + \lfloor 2 \cdot n \rfloor  -( 2 \cdot  \lfloor x \rfloor +   2 \cdot \lfloor n \rfloor ) \\
+              &= \lfloor 2 \cdot x \rfloor + 2 \cdot n - 2 \cdot  \lfloor x \rfloor - 2 \cdot n\\
+              &= \lfloor 2 \cdot x \rfloor - 2 \cdot  \lfloor x \rfloor \\
+              &= f\left( x\right)
+        \end {split}
+        $$
+    </div>
+    <h1>(b)</h1>
+    <div>
+        结论: $ f\left( x\right) = \begin{cases} 1 \quad x\in \left[ 0.5,1\right)
+        \\ 0 \quad x\in \left[ 0,0.5\right)
+        \end{cases} $
+    </div>
+    <h1>(c)</h1>
+    <div>
+        推导:<br>
+        当 $ x\in \left[ 0.5,1\right)$ 时  $ 2 \cdot x\in \left[ 1,2\right) \Rightarrow \lfloor 2 \cdot x \rfloor = 1 $
+        $$
+        \begin {split}
+        f\left( x\right) &= \lfloor 2 \cdot x \rfloor - 2 \cdot  \lfloor x \rfloor \\
+              &= 1 - 0 \\
+              &= 1
+        \end {split}
+        $$
+        当 $ x\in \left[ 0,0.5\right)$ 时  $ 2 \cdot x\in \left[ 0,1\right) \Rightarrow \lfloor 2 \cdot x \rfloor = 0 $
+        $$
+        \begin {split}
+        f\left( x\right) &= \lfloor 2 \cdot x \rfloor - 2 \cdot  \lfloor x \rfloor \\
+              &= 0 - 0 \\
+              &= 0
+        \end {split}
+        $$
+        命题得证
+    </div>
+</body>
+
+</html>
