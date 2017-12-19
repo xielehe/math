@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>homework23.4</title>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            color: #555555;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 2.5em;
+            width: 50%;
+            margin: auto;
+            word-spacing: .8em;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>(a)</h1>
+        证明 $\sum ^{p}_{k=1} \lfloor \dfrac{ka}{p} \rfloor \equiv \dfrac{p^{2} -1}{8} + \mu(a,p)\ (mod\ 2).   $
+    </div>
+    <div>
+        我们将每个乘积$\ ka$表成
+        $$
+            ka = q_{k}p + r_{k}, \quad -P < r_{k} < P.
+        $$
+        两边用$p$除可得
+        $$
+            \dfrac{ka}{p} = q_{k} + \dfrac{r_{k}}{p}, \quad -\dfrac{1}{2} < r_{k} < \dfrac{1}{2}.
+        $$
+        两边取地板函数可得
+        $$
+        \lfloor \dfrac{ka}{p} \rfloor =
+        \begin{cases} q_{k} \quad\quad\quad\quad 若 r_{k}\  > \ 0,
+        \\q_{k}-1 \quad\quad\ 若 r_{k}\  < \ 0.
+        \end{cases}
+        $$
+        因此,如果对$k=1,2,..., P$将$\lfloor \dfrac{ka}{p} \rfloor$的值相加,就有
+        $$
+        \begin {split}
+        \sum ^{p}_{k=1} \lfloor \dfrac{ka}{p} \rfloor &= \sum ^{p}_{k=1} q_{k} - (r_{k}为负数的k的个数)\\
+        & =  \sum ^{p}_{k=1} q_{k} -  \mu(a,p).
+        \end {split}  \tag{9}
+        $$
+        我们最后的任务是计算和$q_{1}+...+q_{P}$,其实只需模2计算.注意到如果对公式
+        $$
+            ka=q_{k}+r_{k}
+        $$
+        模2简化并利用a是偶数的事实，就可得
+        $$
+            0 \equiv q_{k}+r_{k} (mod\ 2).
+        $$
+        关于k求和就可得
+        $$
+            0 \equiv \sum ^{p}_{k=1} q_{k} + \sum ^{p}_{k=1} r_{k} \quad (mod\ 2) \tag{10}
+        $$
+        然而，引理23.2告诉我们，$r_{1},r_{2},...,r_{P}$等于$\pm 1,\pm 2,...,\pm P$按某种顺序的排列,1到P中的每个数要么是以带正号的形式要么是以带负号的形式恰出现一次.
+        因为是模2计算,所以符号无关紧要.由此可得
+        $$
+         \sum ^{p}_{k=1} r_{k} \equiv 1+2+...+P \quad (mod\ 2).
+        $$
+        $$
+        \begin {split}
+        \sum ^{p}_{k=1} q_{k} &\equiv -\sum ^{p}_{k=1} r_{k} \\
+        &\equiv  -(1+2+...+P) \quad (mod\ 2)\\
+        &\equiv  -((1+P)P/2) \quad (mod\ 2)\\
+        &\equiv  -(1+  \dfrac{p-1}{2}) \dfrac{p-1}{2}/2 \quad (mod\ 2)\\
+        &\equiv  -\dfrac{p+1}{2} \dfrac{p-1}{2}/2 \quad (mod\ 2)\\
+        &\equiv  -\dfrac{p^{2}-1}{8} \quad (mod\ 2)\\
+        \end {split}
+        $$
+        带入(9)命题得证
+    </div>
+    <div>
+        <h1>(b)</h1>
+        把$\ a=2\ $带入高斯准则
+        $$
+        (\dfrac{2}{p}) = (-1)^{\mu(2,p)}.  \tag{11}
+        $$
+        把$\ a=2\ $带入(a)
+        $$
+         \sum ^{p}_{k=1} \lfloor \dfrac{2k}{p} \rfloor \equiv \dfrac{p^{2} -1}{8} + \mu(2,p)\ (mod\ 2). \tag{12}
+        $$
+        由于
+        $$
+            \lfloor \dfrac{2k}{p} \rfloor =
+            \begin{cases} 0 \quad\quad 若 1 \geq k \leq P,
+            \\1 \quad\quad\ 若 P < k \leq p.
+            \end{cases}
+        $$
+        所以
+        $$
+         \sum ^{p}_{k=1} \lfloor \dfrac{2k}{p} \rfloor = p - \dfrac{p-1}{2}= (p+1)/2 = 0 (mod \ 2)
+        $$
+        带入(12)得
+        $$
+        \mu(2,p) \equiv \dfrac{p^{2} -1}{8}  \ (mod\ 2).
+        $$
+        带入(11),命题得证
+            $$(\dfrac{2}{p}) = (-1)^{(p^{2} -1)/8}.$$
+    </div>
+
+</body>
+
+</html>
