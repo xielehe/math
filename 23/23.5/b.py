@@ -6,10 +6,12 @@ class Line:
       self.X = x
       self.Y = y
 
-a=5
-b=3
-# A = 7.5, N = 4, B = 9
+a=6
+b=4
+
+# A = 12, N = 7, B = 12
 # A-N-B/2 = -1
+
 x = []
 y = []
 for i in range(b+1):
