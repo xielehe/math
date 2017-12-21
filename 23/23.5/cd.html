@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>homework23.4</title>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            color: #555555;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 2.5em;
+            width: 50%;
+            margin: auto;
+            word-spacing: .8em;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>(c)</h1>
+        <div>
+            $A - N - \dfrac{1}{2}B = -1.$
+        </div>
+    </div>
+    <div>
+        <h1>(d)</h1>
+        <div>
+            证明:看下面一张图,
+            <img src="./d.png">
+            可得, $长方形内(包括边界)点数的和 = (a+1)(b+1)  \tag{0}$ 而
+            $$长方形内(包括边界)点数的和 = 2N + 2B - 斜对角线上的点 \tag{1}$$
+            把(0)带入(1)可得
+            $$(a+1)(b+1) = 2N + 2B - 斜对角线上的点 \tag{2}$$
+            而
+            $$
+            斜对角线上的点 = B - a -b + 1 \tag{3}
+            $$
+            把(3)带入(2)可得
+            $$
+            \begin {split}
+            (a+1)(b+1) &= 2N + 2B - 斜对角线上的点 \\
+            ab + a + b + 1 &= 2N + 2B - (B - a -b + 1) \\
+            ab + a + b + 1 &= 2N + 2B - B + a + b - 1 \\
+            ab + a + b + 1 &= 2N + B + a + b - 1 \\
+            ab + 1 &= 2N + B - 1 \\
+            ab &= 2N + B - 2 \\
+            ab/2 &= N + \dfrac{1}{2}B - 1 \\
+            A &= N + \dfrac{1}{2}B - 1 \\
+            A - N - \dfrac{1}{2}B &= - 1
+            \end {split}
+            $$
+            命题得证
+        </div>
+    </div>
+</body>
+
+</html>
