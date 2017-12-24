@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"math"
 	"sync"
 	"time"
 
@@ -10,9 +9,9 @@ import (
 )
 
 func a2abb2(p int) (int, int, bool) {
-	n := int(math.Sqrt(float64(p))) + 2
-	for i := 1; i < n; i++ {
-		for j := 1; j < n; j++ {
+	n := p - 1
+	for i := -n; i < n; i++ {
+		for j := -n; j < n; j++ {
 			if i*i+i*j+j*j == p {
 				return i, j, true
 			}
@@ -70,7 +69,7 @@ func main() {
 	// fmt.Println(a(50)) //[{1 1 3} {1 2 7} {1 3 13} {2 3 19} {1 5 31} {3 4 37} {1 6 43}]
 	// 通过观察发现，满足要求的素数都满足模3余1(除了3),下面通过更多的素数测试,以便增加猜测正确的概率
 	start := time.Now()
-	limit := 1000000
+	limit := 10000
 	container := a(limit)
 	isMod3r1 := testa(container)
 	fmt.Println(isMod3r1)
