@@ -69,23 +69,23 @@ func testa(t []a2ABB2) bool {
 func main() {
 	// fmt.Println(a(50)) //[{1 1 3} {1 2 7} {1 3 13} {2 3 19} {1 5 31} {3 4 37} {1 6 43}]
 	// 通过观察发现，满足要求的素数都满足模3余1(除了3),下面通过更多的素数测试,以便增加猜测正确的概率
-	// start := time.Now()
-	// limit := 10000
-	// container := a(limit)
-	// isMod3r1 := testa(container)
-	// fmt.Println(isMod3r1)
-	// end := time.Now()
+	start := time.Now()
+	limit := 10000
+	container := a(limit)
+	isMod3r1 := testa(container)
+	fmt.Println(isMod3r1)
+	end := time.Now()
 	// fmt.Printf("LongCalculation took this amount of time: %s\n", end.Sub(start))
 	// 通过测试，发现<1000000的结果都满足猜想.
 
 	// 那么，模3余1的素数p,一定满足p=a^2+ab+b^2吗，虽然我暂时不打算证明，但是下面测试一下。
-	start := time.Now()
-	limit := 1000000
-	container := inverseA(limit)
-	isA2abb2 := inverseTesta(container)
-	fmt.Println(isA2abb2)
-	end := time.Now()
-	fmt.Printf("LongCalculation took this amount of time: %s\n", end.Sub(start))
+	inversestart := time.Now()
+	inverselimit := 1000000
+	inversecontainer := inverseA(limit)
+	inverseisA2abb2 := inverseTesta(inversecontainer)
+	fmt.Println(inverseisA2abb2)
+	inverseend := time.Now()
+	fmt.Printf("LongCalculation took this amount of time: %s\n", inverseend.Sub(inversestart))
 	// 通过测试，发现<1000000的结果都满足猜想.
 }
 
