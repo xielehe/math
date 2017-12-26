@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>homework23.4</title>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            color: #555555;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 2.5em;
+            width: 50%;
+            margin: auto;
+            word-spacing: .8em;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div>
+            证明:
+            把任意整数$\ (mod\ 20)$的值x，简化到$-10$与$10$之间，即
+            $$
+                -10 < x \leq 10
+            $$
+            因为本题考虑的是平方数,正负号无关紧要,所以可以不考虑负数,即有
+            $$
+                0 \leq x \leq 10
+            $$
+            很显然素数$p\neq 2$,所以p是奇数,因此a,b必定一奇一偶.<br>
+            1.当b是偶数时$\ 0 \equiv 5b^{2}\ (mod 20) $,而$a\ (mod 20)$的取值为1,3,5,7,9.$a^{2}\ (mod 20)$的取值为1和9.(a mod20不能取5,因为p是素数)
+            $$
+            \begin {split}
+            p &= a^{2}+5b^{2} \ (mod\ 20) \\
+              &= a^{2}+0 \ (mod\ 20) \\
+              &= a^{2} \ (mod\ 20) \\
+              &= 1或9 \ (mod\ 20) \\
+            \end {split}
+            $$
+            至此已经证明一半了 <br>
+            2.当a是偶数,b是奇数时:$b\ (mod 20)$的取值为(1,3,5,7,9).$b^{2}\ (mod 20)$的取值为(1,5,9),$5b^{2}\ (mod 20)$的取值为5<br>
+            而$a\ (mod 20)$的取值为(0,2,4,6,8,10).$a^{2}\ (mod 20)$的取值为(-4,4,0),由题设和p为素数可知，取值不可能为0,所以取值可进一步缩小为(-4,4)
+            $$
+            \begin {split}
+            p &= a^{2}+5b^{2} \ (mod\ 20) \\
+              &= a^{2}+5 \ (mod\ 20) \\
+              &= \pm 4 +5 \ (mod\ 20) \\
+              &= 1或9 \ (mod\ 20) \\
+            \end {split}
+            $$
+            命题得证
+        </div>
+    </div>
+</body>
+
+</html>
