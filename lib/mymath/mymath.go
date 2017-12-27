@@ -36,3 +36,10 @@ func IsPrime(value int) bool {
 	}
 	return true
 }
+
+//Divide ...
+func Divide(a, b uint) (uint, uint) {
+	quotient := a / b
+	remainder := a % b
+	return quotient, remainder
+}
